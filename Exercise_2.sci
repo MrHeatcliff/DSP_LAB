@@ -41,8 +41,8 @@ disp(string(A)+ "cos("+string(temp)+")")
 //output ex2.3
 n0 = 6
 k = 1
-t = 0:1:30
+n = 0:1:30
 clf
 
-plot(t, x_n(t),"*r")
+plot([n ;n],[0*n ;x_n(n)],'marker','d','markerFaceColor','green','markerEdgeColor','yel')
 title("x = 3sin(100*pi*n)", "fontsize",3)
