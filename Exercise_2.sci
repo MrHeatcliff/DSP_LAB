@@ -46,3 +46,7 @@ clf
 
 plot([n ;n],[0*n ;x_n(n)],'marker','d','markerFaceColor','green','markerEdgeColor','yel')
 title("x = 3sin(100*pi*n)", "fontsize",3)
+//output ex2.4
+
+temp = floor(n*10)/10
+plot([n ;n],[0*n ;temp],'marker','d','markerFaceColor','green','markerEdgeColor','yel')
