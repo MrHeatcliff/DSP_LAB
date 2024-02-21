@@ -7,6 +7,8 @@ omega = 100*%pi
 theta = -%pi/2
 sampling_rate = 300
 num_period = 5
+truncated_delta = 0.1
+
 function y = x(t)
     y = A*sin(omega*t)
     // y = 3cos(100pi*t - pi/2)
@@ -17,6 +19,24 @@ function y = x_n(n)
     // y = 3cos(*t - pi/2)
 endfunction
 // some functions for tasks
+/*
+@ number truncation function
+    para:   t - the number need to be truncated
+            delta - the number of digit (eg: 0.1, 0.01, 0.001))
+    return value: y - the truncated number*/
+function y = truncate(t, delta)
+    if (t < 0) then
+        y = ceil(t/delta)*delta
+    else
+        y = floor(t/delta)*delta
+    end
+endfunction
+
+/*
+@ for ex2.1
+    para:  x - vertical axis 
+           t - horizontal axis
+    retv: none*/
 function draw_plot(x, t)
     disp("ex2.1. Curve in 5 periods")
    // clf
@@ -41,21 +61,21 @@ disp(string(A)+ "cos("+string(temp)+")")
 //output ex2.3
 n0 = 6
 k = 1
-n = 0:1:30
+n = 0:1:n0*num_period
 clf
 
+disp("ex2.3. Draw x(n) in 5 periods")
 plot([n ;n],[0*n ;x_n(n)],'marker','d','markerFaceColor','green','markerEdgeColor','yel')
 title("x = 3sin(100*pi*n)", "fontsize",3)
 //output ex2.4
 clf
-temp = 0:1:30;
+y = 0:1:30;
 for i = 1:31
-    if (x_n(i-1) < 0) then
-        temp(i) = ceil(x_n(i-1)*10)/10;
-    else
-        temp(i) = floor(x_n(i-1)*10)/10;
-    end
+    y(i) = truncate(x_n(i-1), truncated_delta)
 end
 
+disp("ex2.4. Draw xq(n) in 5 periods")
+plot([n ;n],[0*n ;y],'marker','d','markerFaceColor','green','markerEdgeColor','yel')
 
-plot([n ;n],[0*n ;temp],'marker','d','markerFaceColor','green','markerEdgeColor','yel')
+
+
