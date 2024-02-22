@@ -3,17 +3,7 @@ clear
 //function
 //function for ex1.1
 function y = f(x)
-    col = length(x(1,:));
-    row = length(x)/col;
-    
-    for i = 1:row
-        for j = 1: col
-        y(i,j) = x(i,j)+1;
-        
-        end
-    
-    end
-
+    y = x + 1;
 endfunction
 //function for ex1.2
 function z = g(x,y)
@@ -23,21 +13,14 @@ function z = g(x,y)
     row_y = length(y)/col_y;
     
     if(col_x <> col_y | row_x <> row_y) then z = %F;
-    else
-        for i = 1:row_x
-            for j = 1:col_x
-                z(i,j) = x(i,j) * y(i,j);
-                
-            end
-            
-        end
-        
+    else 
+        z = x.*y;
     end
 
 endfunction
 //function for ex1.3
 function y = t(number_of_sample)
-    x = linspace(0, %pi, number_of_sample+1);
+    x = linspace(0, %pi, number_of_sample);
     y = sin(x);
 endfunction
 //input
@@ -52,8 +35,10 @@ x3 = 10;
 Ex1 = f(x1);
 Ex2 = g(x2,y2);
 Ex3 = t(10);
+disp("Answer of exercise 1:")
 disp(Ex1)
+disp("Answer of exercise 2:")
 disp(Ex2)
+disp("Answer of exercise 3:")
 disp(Ex3)
 //
-
