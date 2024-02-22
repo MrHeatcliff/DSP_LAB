@@ -51,6 +51,7 @@ period = 2*%pi/omega
 t = linspace(0,period*num_period,100)
 omega_new = omega/sampling_rate
 //output ex2.1
+f0 = scf(0);
 draw_plot(x, t)
 //output ex2.2
 n = poly(0, "n");
@@ -62,12 +63,13 @@ disp(string(A)+ "cos("+string(temp)+")")
 n0 = 6
 k = 1
 n = 0:1:n0*num_period
+f1 = scf(1);
 clf
-
 disp("ex2.3. Draw x(n) in 5 periods")
 plot([n ;n],[0*n ;x_n(n)],'marker','d','markerFaceColor','green','markerEdgeColor','yel')
 title("x = 3sin(100*pi*n)", "fontsize",3)
 //output ex2.4
+f2 = scf(2);
 clf
 y = 0:1:30;
 for i = 1:31
