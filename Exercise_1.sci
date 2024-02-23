@@ -21,7 +21,13 @@ endfunction
 //function for ex1.3
 function y = t(number_of_sample)
     x = linspace(0, %pi, number_of_sample);
-    y = sin(x);
+    for i = 1:10
+        if(sin(x(i))>%eps) then y(1,i) = sin(x(i));
+            
+        else y(1,i) = 0;
+        end
+        
+    end
 endfunction
 //input
 x1 = 1:4;
