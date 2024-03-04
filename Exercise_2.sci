@@ -69,15 +69,15 @@ disp("ex2.3. Draw x(n) in 5 periods")
 plot([n ;n],[0*n ;x_n(n)],'marker','d','markerFaceColor','green','markerEdgeColor','yel')
 title("x = 3sin(100*pi*n)", "fontsize",3)
 //output ex2.4
-f2 = scf(2);
-clf
 y = 0:1:30;
 for i = 1:31
     y(i) = truncate(x_n(i-1), truncated_delta)
 end
 
 disp("ex2.4. Draw xq(n) in 5 periods")
+f2 = scf(2);
+clf
 plot([n ;n],[0*n ;y],'marker','d','markerFaceColor','green','markerEdgeColor','yel')
-
+title("xq(n)", "fontsize",3)
 
 
