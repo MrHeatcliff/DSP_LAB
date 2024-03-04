@@ -9,7 +9,7 @@ function y=g(x)
     y = 1/2 * (x - rev_x_n);
 endfunction
 //input x_n
-n = -1:3;
+n = -2:2;
 x_n = [0 1 3 -2 0];
 
 //display output
