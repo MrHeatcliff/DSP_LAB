@@ -1,3 +1,4 @@
+clear
 //function for calculate x_e(n)
 function y=f(x)
     rev_x_n = x * -1;
@@ -35,4 +36,12 @@ plot2d3(n,x_n_e, nax = [0,length(n),0,max(x_n_e) - min(x_n_e)+1])
 title("Even Signal")
 xlabel("n")
 ylabel("x_e(n)")
+xgrid(color("grey75"), 1, 7)
+//draw x_n signal
+f2 = scf(2)
+clf
+plot2d3(n,x_n, nax = [0,length(n),0,max(x_n) - min(x_n)+1])
+title("X(n) Signal")
+xlabel("n")
+ylabel("x(n)")
 xgrid(color("grey75"), 1, 7)
