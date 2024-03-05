@@ -1,12 +1,16 @@
 clear
 //function for calculate x_e(n)
 function y=f(x)
-    rev_x_n = x * -1;
+    for i = 1 : size(x,"c")
+        rev_x_n(1,i) = x(1,size(x,"c")-i+1);
+    end
     y = 1/2 * (x + rev_x_n);
 endfunction
 //function for calculate x_o(n)
 function y=g(x)
-    rev_x_n = x * -1;
+    for i = 1 : size(x,"c")
+        rev_x_n(1,i) = x(1,size(x,"c")-i+1);
+    end
     y = 1/2 * (x - rev_x_n);
 endfunction
 //input x_n
