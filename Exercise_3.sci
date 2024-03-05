@@ -1,6 +1,6 @@
 //start with a clear
 clear
-//fucntion delay
+//fucntion fold
 function [yn, yorigin] = fold(xn, xorigin)
     sizex = size(xn, "c");
     for i = 1:sizex
@@ -11,7 +11,7 @@ endfunction
 
 //input
 xn = [0 1 -2 3 6 0];
-xorigin = 2;
+xorigin = 3;
 k = 1;
 // output
 [yn, yorigin] = fold(xn, xorigin);
