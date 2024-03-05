@@ -1,27 +1,20 @@
 //start with a clear
 clear
 //fucntion delay
-function [yn, yorigin] = delay(xn, xorigin, k)
-    if k <= xorigin then
-        yorigin = xorigin - k;
-        yn = xn;
-    else 
-        yorigin = 0;
-        for i = 1: (k-xorigin)
-            yn(1,i) = 0;
-        end
-        for i = 1:size(xn,"c")
-            yn(1,k-xorigin+i) = xn(1,i);
-        end
+function [yn, yorigin] = fold(xn, xorigin)
+    sizex = size(xn, "c");
+    for i = 1:sizex
+        yn(1,i) = xn(1,1 + sizex-i);
     end
+    yorigin = xorigin;
 endfunction
 
 //input
 xn = [0 1 -2 3 6 0];
-xorigin = 3;
+xorigin = 2;
 k = 1;
 // output
-[yn, yorigin] = delay(xn, xorigin, k);
+[yn, yorigin] = fold(xn, xorigin);
 
 //graphically display xn and yn
 clf
