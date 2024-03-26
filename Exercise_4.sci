@@ -62,5 +62,3 @@ subplot(3,1,2);
 draw_plot(x2n,x2origin, "n", "x2(n)", "x2(n)")
 subplot(3,1,3);
 draw_plot(yn,yorigin, "n", "y(n)", "y(n) = x1(n)+x2(n)")
-// print the result
-disp(["x1 = ", x1n])
